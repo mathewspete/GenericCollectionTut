@@ -32,6 +32,42 @@ namespace GenericCollectionTut {
 			}
 
 
+			var WxHist = new List<Weather>(3);
+			var DtThr = new Weather {
+				Time = new DateTime(2021, 2, 18),
+				Temp = 19,
+				Precipitation = 3
+			};
+			WxHist.Add(DtThr);
+
+			var DtWed = new Weather {
+				Time = new DateTime(2021,2,17),
+				Temp = 15,
+				Precipitation = 0
+			};
+			WxHist.Add(DtWed);
+
+			var DtTue = new Weather {
+				Time = new DateTime(2021,2,16),
+				Temp = 16,
+				Precipitation = 4
+			};
+			WxHist.Add(DtTue);
+
+			var DtMon = new Weather {
+				Time = new DateTime(2021,2,15),
+				Temp = 17,
+				Precipitation = 8
+			};
+			WxHist.Add(DtMon);
+
+			foreach(var day in WxHist) {
+				var msg = $"Weather for {day.Time.ToString("MM, ddd, yyyy")}" + 
+					$"Precipitation was {day.Precipitation}" +
+					$"With a high temp of {day.Temp}";
+				Console.WriteLine(msg);
+			}
+
 		}
 	}
 }
