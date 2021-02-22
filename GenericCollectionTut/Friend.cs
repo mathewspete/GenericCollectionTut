@@ -8,6 +8,7 @@ namespace GenericCollectionTut {
 		public string name { get; set; }
 		public string email { get; set; }
 		public bool BFF { get; set; }
+		public long phone { get; set; }
 
 		public Friend() {
 

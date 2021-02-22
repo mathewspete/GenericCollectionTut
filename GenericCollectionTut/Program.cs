@@ -63,8 +63,8 @@ namespace GenericCollectionTut {
 
 			foreach(var day in WxHist) {
 				var msg = $"Weather for {day.Time.ToString("MM, ddd, yyyy")}" + 
-					$"Precipitation was {day.Precipitation}" +
-					$"With a high temp of {day.Temp}";
+					$", recipitation was {day.Precipitation}" +
+					$", with a high temp of {day.Temp}.";
 				Console.WriteLine(msg);
 			}
 
@@ -73,25 +73,48 @@ namespace GenericCollectionTut {
 			var friend1 = new Friend {
 				name = "frind1",
 				email = "friend1@email.com",
-				BFF = true
+				BFF = true,
+				phone = 1235555
 			};
 			myFriends.Add(friend1);
 			var friend2 = new Friend {
 				name = "frind2",
 				email = "friend2@email.com",
-				BFF = true
+				BFF = true,
+				phone = 7654321
 			};
 			myFriends.Add(friend2);
 			var friend3 = new Friend {
 				name = "frind3",
 				email = "friend3@email.com",
-				BFF = false
+				BFF = false,
+				phone = 2345678
 			};
 			myFriends.Add(friend3);
 
 			foreach (var f in myFriends) {
 				Console.WriteLine($"{f.name}");
 			}
+
+
+
+			var ourFriends = new Dictionary<long, Friend>(3);
+
+			foreach (var f in myFriends) {
+				ourFriends.Add(f.phone, f);
+			}
+
+			foreach (var f in ourFriends) {
+				Console.WriteLine($"{f.Key} | {f.Value.name} | {f.Value.phone}");
+				Console.WriteLine($"phone: {f.Key} | name: {f.Value.name}\n");
+			}
+
+			foreach (var phone in ourFriends.Keys) {
+				var friend = ourFriends[phone];
+				Console.WriteLine($"{friend.phone} : {friend.name}\n");
+			}
+
+
 
 		}
 	}
