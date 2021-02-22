@@ -32,7 +32,7 @@ namespace GenericCollectionTut {
 			}
 
 
-			var WxHist = new List<Weather>(3);
+			var WxHist = new List<Weather>(4);
 			var DtThr = new Weather {
 				Time = new DateTime(2021, 2, 18),
 				Temp = 19,
@@ -66,6 +66,31 @@ namespace GenericCollectionTut {
 					$"Precipitation was {day.Precipitation}" +
 					$"With a high temp of {day.Temp}";
 				Console.WriteLine(msg);
+			}
+
+			var myFriends = new List<Friend>(3);
+
+			var friend1 = new Friend {
+				name = "frind1",
+				email = "friend1@email.com",
+				BFF = true
+			};
+			myFriends.Add(friend1);
+			var friend2 = new Friend {
+				name = "frind2",
+				email = "friend2@email.com",
+				BFF = true
+			};
+			myFriends.Add(friend2);
+			var friend3 = new Friend {
+				name = "frind3",
+				email = "friend3@email.com",
+				BFF = false
+			};
+			myFriends.Add(friend3);
+
+			foreach (var f in myFriends) {
+				Console.WriteLine($"{f.name}");
 			}
 
 		}
